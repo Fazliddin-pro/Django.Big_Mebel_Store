@@ -2,7 +2,7 @@ from django.core.paginator import Paginator
 from django.shortcuts import get_list_or_404, render
 
 from goods.models import Products
-from goods.utils import q_search
+from goods.utils import q_search, alternative_q_search
 
 
 def catalog(request, category_slug=None):
@@ -14,7 +14,7 @@ def catalog(request, category_slug=None):
     if category_slug == 'all':
         goods = Products.objects.all()
     elif query:
-        goods = q_search(query)
+        goods = alternative_q_search(query)
     else:
         goods = get_list_or_404(Products.objects.filter(category__slug=category_slug))
 

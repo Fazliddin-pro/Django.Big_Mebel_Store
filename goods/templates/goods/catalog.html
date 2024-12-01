@@ -1,4 +1,4 @@
-{% extends "main/base.html" %}
+{% extends "base.html" %}
 {% load static %}
 {% load goods_tags %}
 
@@ -54,6 +54,7 @@
         <h2 class="mt-4">По запросу ничего не найдено</h2>
     {% endif %}
     {% endif %}
+    
     {% for product in goods %}
         <!-- Карта товара -->
         <div class="col-lg-4 col-md-6 p-4">
@@ -115,7 +116,7 @@
             <div class="custom-shadow d-flex">
 
                 <li class="page-item {% if not goods.has_previous %}disabled{% endif %}">
-                <a class="page-link" href="{% if goods.has_previous %}?{% change_params page=goods.previous_page_number %}{% else %}#{% endif %}">Назад</a>
+                    <a class="page-link" href="{% if goods.has_previous %}?{% change_params page=goods.previous_page_number %}{% else %}#{% endif %}">Назад</a>
                 </li>
 
                 {% for page in goods.paginator.page_range %}
@@ -125,7 +126,6 @@
                     </li>
                 {% endif %}
                 {% endfor %}
-
 
                 <li class="page-item {% if not goods.has_next %}disabled{% endif %}">
                     <a class="page-link" href="{% if goods.has_next %}?{% change_params page=goods.next_page_number %}{% else %}#{% endif %}">Следующая</a>
