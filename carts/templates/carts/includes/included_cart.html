@@ -25,10 +25,10 @@
                     <div class="col p-0">
                         <p>x {{ cart.product.sell_price }} = </p>
                     </div>
-                    <div class="col p-0"><strong>{{ cart.products_price }} $</strong></div>
+                    <div class="col p-0"><strong> {{cart.products_price}} $</strong></div>
                     <div class="col p-0">
-                        <a href="{% url "cart:cart_remove" cart.id %}" class="remove-from-cart" data-cart-id="">
-                            <img class="mx-1" src="{% static 'deps/icons/trash3-fill.svg' %}"
+                        <a href="{% url "cart:cart_remove" %}" class="remove-from-cart" data-cart-id="">
+                            <img class="mx-1" src="{% static "deps/icons/trash3-fill.svg" %}"
                                 alt="Catalog Icon" width="16" height="16">
                         </a>
                     </div>
@@ -40,6 +40,6 @@
 <div class="card mb-3 shadow-lg">
     <div class="card-footer">
         <p class="float-left">Итого <strong>{{ carts.total_quantity }}</strong> товар(а) на сумму</p>
-        <h4 class="float-left"><strong>{{ carts.total_price }}</strong></h4>
+        <h4 class="float-left"><strong>{{ carts.total_price }} $</strong></h4>
     </div>
 </div>

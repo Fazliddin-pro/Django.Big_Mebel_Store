@@ -3,11 +3,9 @@
 
 {% block modal_cart %}
 {% include "includes/cart_button.html" %}
-{% endblock modal_cart %}
-
+{% endblock  %}
 
 {% block content %}
-<!-- Контент на странице -->
 <div class="row">
     <div class="container mt-5">
         <div class="row justify-content-center">
@@ -22,8 +20,8 @@
                                 value="{% if form.first_name.value %}{{ form.first_name.value }}{% endif %}"
                                 name="first_name"
                                 placeholder="Введите ваше имя" required>
-                                {% if from.first_name.errors %}
-                                <div class="alert alert-danger alert-dismissible fade show">{{ from.first_name.errors }}</div>
+                                {% if form.first_name.errors %}
+                                <div class="alert alert-danger alert-dismissible fade show">{{form.first_name.errors}}</div>
                                 {% endif %}
                         </div>
                         <div class="col-md-6 mb-3">
@@ -32,8 +30,8 @@
                                 value="{% if form.last_name.value %}{{ form.last_name.value }}{% endif %}"
                                 name="last_name"
                                 placeholder="Введите вашу фамилию" required>
-                                {% if from.last_name.errors %}
-                                <div class="alert alert-danger alert-dismissible fade show">{{ from.last_name.errors }}</div>
+                                {% if form.last_name.errors %}
+                                <div class="alert alert-danger alert-dismissible fade show">{{form.last_name.errors}}</div>
                                 {% endif %}
                         </div>
                         <div class="col-md-6 mb-3">
@@ -42,8 +40,8 @@
                                 value="{% if form.username.value %}{{ form.username.value }}{% endif %}"
                                 name="username"
                                 placeholder="Введите ваше имя пользователя" required>
-                                {% if from.username.errors %}
-                                <div class="alert alert-danger alert-dismissible fade show">{{ from.username.errors }}</div>
+                                {% if form.username.errors %}
+                                <div class="alert alert-danger alert-dismissible fade show">{{form.username.errors}}</div>
                                 {% endif %}
                         </div>
                         <div class="col-md-6 mb-3">
@@ -52,8 +50,8 @@
                                 value="{% if form.email.value %}{{ form.email.value }}{% endif %}"
                                 name="email"
                                 placeholder="Введите ваш email" required>
-                                {% if from.email.errors %}
-                                <div class="alert alert-danger alert-dismissible fade show">{{ from.email.errors }}</div>
+                                {% if form.email.errors %}
+                                <div class="alert alert-danger alert-dismissible fade show">{{form.email.errors}}</div>
                                 {% endif %}
                         </div>
                         <div class="col-md-6 mb-3">
@@ -62,8 +60,8 @@
                                 value="{% if form.password1.value %}{{ form.password1.value }}{% endif %}"
                                 name="password1"
                                 placeholder="Введите пароль" required>
-                                {% if from.password1.errors %}
-                                <div class="alert alert-danger alert-dismissible fade show">{{ from.password1.errors }}</div>
+                                {% if form.password1.errors %}
+                                <div class="alert alert-danger alert-dismissible fade show">{{form.password1.errors}}</div>
                                 {% endif %}
                         </div>
                         <div class="col-md-6 mb-3">
@@ -72,8 +70,8 @@
                                 value="{% if form.password2.value %}{{ form.password2.value }}{% endif %}"
                                 name="password2"
                                 placeholder="Подтвердите пароль" required>
-                                {% if from.password2.errors %}
-                                <div class="alert alert-danger alert-dismissible fade show">{{ from.password2.errors }}</div>
+                                {% if form.password2.errors %}
+                                <div class="alert alert-danger alert-dismissible fade show">{{form.password2.errors}}</div>
                                 {% endif %}
                         </div>
                     </div>
@@ -84,4 +82,4 @@
         </div>
     </div>
 </div>
-{% endblock content %}
+{% endblock  %}
