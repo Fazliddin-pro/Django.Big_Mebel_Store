@@ -1,3 +1,4 @@
+import re
 from django import forms
 
 
@@ -20,7 +21,20 @@ class CreateOrderForm(forms.Form):
             ],
         )
 
+    def clean_phone_number(self):
+        data = self.cleaned_data['phone_number'].replace(' ', '')  # Удаляем пробелы
 
+        if not data.startswith('+'):
+            raise forms.ValidationError("Не поставлен знак '+' в начале")
+
+        if not data[1:].isdigit():
+            raise forms.ValidationError("Номер должен содержать только цифры после знака '+'")
+
+        pattern = re.compile(r'^\+998\d{9}$')
+        if not pattern.match(data):
+            raise forms.ValidationError("Неверный формат номера. Правильный формат: +998XXXXXXXXX")
+
+        return data
 
 
 
