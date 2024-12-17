@@ -14,7 +14,7 @@ $(document).ready(function () {
 
         // Получаем id товара из атрибута data-product-id
         var product_id = $(this).data("product-id");
-        console.log(product_id)
+
         // Из атрибута href берем ссылку на контроллер django
         var add_to_cart_url = $(this).attr("href");
 
@@ -50,6 +50,7 @@ $(document).ready(function () {
             },
         });
     });
+
 
 
 
@@ -103,6 +104,7 @@ $(document).ready(function () {
 
 
 
+
     // Теперь + - количества товара 
     // Обработчик события для уменьшения значения
     $(document).on("click", ".decrement", function () {
@@ -152,12 +154,12 @@ $(document).ready(function () {
             },
 
             success: function (data) {
-                 // Сообщение
+                // Сообщение
                 successMessage.html(data.message);
                 successMessage.fadeIn(400);
-                 // Через 7сек убираем сообщение
+                // Через 7сек убираем сообщение
                 setTimeout(function () {
-                     successMessage.fadeOut(400);
+                    successMessage.fadeOut(400);
                 }, 7000);
 
                 // Изменяем количество товаров в корзине
@@ -176,8 +178,6 @@ $(document).ready(function () {
             },
         });
     }
-
-
 
     // Берем из разметки элемент по id - оповещения от django
     var notification = $('#notification');
